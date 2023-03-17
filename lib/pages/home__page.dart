@@ -37,6 +37,7 @@ class HomePage extends StatelessWidget {
                 onTap: (){},
               ),
               SizedBox(height: 20,),
+
               CommonButton(
                 text: "User",
                 onTap: (){},

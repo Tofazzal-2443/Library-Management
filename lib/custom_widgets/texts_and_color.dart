@@ -12,6 +12,7 @@ myStyle(double size, [Color? clr, FontWeight? fw]) {
 const Color textClrLight = Color(0xffE4E4E6);
 const Color textClrDark = Color(0xff8A8A8E);
 const Color buttonC = Color(0xffFE8C08);
+const Color clrText = Color(0xffF54B30);
 const LinearGradient buttonClr = LinearGradient(
   colors: [
     Color(0xffFE8C08),
