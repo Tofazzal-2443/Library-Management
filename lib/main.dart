@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:library_management/pages/admin/login_page.dart';
+import 'package:library_management/pages/admin/signup_page.dart';
 import 'package:library_management/pages/home__page.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      home: SignUpPage(),
     );
   }
 }
