@@ -146,48 +146,12 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
 
                     //********* password Text field
-                    TextFormField(
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
-                        errorStyle: TextStyle(color: Colors.redAccent),
-                        hintText: "password",
-                        labelText: "password",
-                        labelStyle: TextStyle(
-                          color: clrText,
-                        ),
-                        prefixIcon: Icon(
-                          Icons.password,
-                          color: clrText,
-                        ),
-                        suffixIcon: Icon(_isObsecure
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                    CommonTextField(
+                      hintText: "Password",
+                      labelText: "Password",
+                      prefixIcon: Icon(Icons.password, color: clrText,),
+                      suffixIcon: Icon(
+                        _isObsecure ? Icons.visibility : Icons.visibility_off,
                       ),
                     ),
 
@@ -195,94 +159,29 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: 20,
                     ),
 
-                    //********************* password Text field
-                    TextFormField(
-                      style: TextStyle(
-                        fontSize: 20,
+                    //*********************Confirm password Text field
+                    CommonTextField(
+                      hintText: "Confirm password",
+                      labelText: "Confirm password",
+                      prefixIcon: Icon(
+                        Icons.password,
+                        color: clrText,
                       ),
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
-                        errorStyle: TextStyle(color: Colors.redAccent),
-                        hintText: "Confirm password",
-                        labelText: " Confirm password",
-                        labelStyle: TextStyle(
-                          color: clrText,
-                        ),
-                        prefixIcon: Icon(
-                          Icons.password,
-                          color: clrText,
-                        ),
-                        suffixIcon: Icon(_isObsecure
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                      suffixIcon: Icon(
+                        _isObsecure ? Icons.visibility : Icons.visibility_off,
                       ),
                     ),
+
                     SizedBox(
                       height: 20,
                     ),
                     //********************Admin Referral Code Text field
-                    TextFormField(
-                      style: TextStyle(
-                        fontSize: 20,
-                      ),
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: clrText,
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
-                        errorStyle: TextStyle(color: Colors.redAccent),
-                        hintText: "Admin Referral Code",
-                        labelText: "Admin Referral Code",
-                        labelStyle: TextStyle(
-                          color: clrText,
-                        ),
-                        prefixIcon: Icon(
-                          Icons.person_outline,
-                          color: clrText,
-                        ),
+                    CommonTextField(
+                      hintText: "Admin Referral Code",
+                      labelText: "Admin Referral Code",
+                      prefixIcon: Icon(
+                        Icons.person_outline,
+                        color: clrText,
                       ),
                     ),
                   ],
@@ -298,6 +197,62 @@ class _SignUpPageState extends State<SignUpPage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CommonTextField extends StatelessWidget {
+  CommonTextField({
+    super.key,
+    required this.hintText,
+    required this.labelText,
+    this.prefixIcon,
+    this.suffixIcon,
+  });
+
+  String hintText, labelText;
+  Icon? suffixIcon, prefixIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      style: TextStyle(
+        fontSize: 20,
+      ),
+      decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(
+            color: clrText,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(
+            color: clrText,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(
+            color: clrText,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(
+            color: Colors.red,
+          ),
+        ),
+        errorStyle: TextStyle(color: Colors.redAccent),
+        hintText: "$hintText",
+        labelText: "$labelText",
+        labelStyle: TextStyle(
+          color: clrText,
+        ),
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
       ),
     );
   }
